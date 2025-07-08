@@ -2,6 +2,8 @@
 
 import React from "react";
 
+// Define the interface for education data
+// This interface describes the structure of each education entry
 interface EducationInterface {
   startDate: string;
   endDate: string;
@@ -57,7 +59,7 @@ const formatDate = (dateStr: string) =>
 
 const Education: React.FC = () => {
   return (
-    <div className="flex space-x-4 my-12">
+    <div className="flex  space-x-4 my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
       <div>
         <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white text-left">
           Education

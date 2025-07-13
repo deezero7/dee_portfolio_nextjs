@@ -120,3 +120,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* for smooth scrolling when using anchor links */
+html {
+  scroll-behavior: smooth;
+}

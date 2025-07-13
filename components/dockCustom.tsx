@@ -60,33 +60,72 @@ const Icons = {
       ></path>
     </svg>
   ),
+  // New 'work' icon (example: briefcase from Heroicons)
+
+  // New 'project' icon (example: folder from Feather Icons)
+  project: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <title>Project</title>
+      <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+    </svg>
+  ),
+  work: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      {...props}
+    >
+      <title>Work</title>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M20.25 14.25v4.5m0 0a2.25 2.25 0 0 0-2.25 2.25H4.5a2.25 2.25 0 0 1-2.25-2.25V7.5M14.25 6L9 3 3.75 6M20.25 14.25V4.5A2.25 2.25 0 0 0 18 2.25h-6A2.25 2.25 0 0 0 9.75 4.5V14.25m6-8.25h-6"
+      />
+    </svg>
+  ),
 };
 
 const DATA = {
   navbar: [
-    { href: "#", icon: HomeIcon, label: "Home" },
-    { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "#home", icon: HomeIcon, label: "Home" },
+    // { href: "#", icon: PencilIcon, label: "Blog" },
+    { href: "#projects", icon: Icons.project, label: "Projects" }, // Points to id="projects"
+    { href: "#work", icon: Icons.work, label: "Work" },
   ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "#",
+        url: "https://github.com/deezero7",
         icon: Icons.github,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "#",
+        url: "https://www.linkedin.com/in/deependrasingh09/",
         icon: Icons.linkedin,
       },
       X: {
         name: "X",
-        url: "#",
+        url: "https://x.com/deezero7",
         icon: Icons.x,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:deezero7@gmail.com",
         icon: Icons.email,
       },
     },

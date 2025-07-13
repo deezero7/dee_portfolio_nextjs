@@ -2,32 +2,80 @@ import { Button } from "@/components/ui/button";
 
 interface ProjectInterface {
   title: string;
-  description: string;
+  description: string[];
   link: string[];
   previewContent?: string;
+  apk?: string;
   code?: string;
   technologies?: string[];
   youtubeUrl?: string;
+  previewImage?: string;
+  website?: string; // Optional field for website link
 }
 
 const projectsData: ProjectInterface[] = [
   {
-    title: "Project One",
-    description: "This is a brief description of Project One.",
+    title: "Custom login and save game data",
+    description: [
+      "Custom login and registration system",
+      "Save and fetch game data on cloud using Node.js and MongoDB",
+      "Player data includes: profile picture, gems, gold, XP, level, etc.",
+      "argon2 used for secure password hashing",
+      "IP blocking after multiple failed login attempts",
+      "Email verification using JWT tokens",
+      "JWT token-based authentication with auto-refresh on successful login",
+      "Regex used for validating email and password format",
+      "Mongoose for schema definition and database connection",
+      "Routing and modular structure added for scalability",
+    ],
+
     link: ["https://google.com"],
     previewContent: "Preview content for Project One.",
+    apk: "https://fb.com",
+    code: "https://deezero7.github.io/webapp_for_Unity3dGame_nextjs-/login",
+    technologies: ["Node.js", "Express.js", "MongoDB"],
+    previewImage: "./images/unity3d-game-development.png", // Example image URL
+    website: "https://deezero7.github.io/webapp_for_Unity3dGame_nextjs-/login",
+  },
+  {
+    title: "Project One",
+    description: ["This is a brief description of Project One."],
+    link: ["https://google.com"],
+    previewContent: "Preview content for Project One.",
+    apk: "https://fb.com",
     code: "#",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
-    youtubeUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example YouTube URL
+    youtubeUrl: "https://www.youtube.com/embed/PZ8Kn4k_PGc?si=21TB7bLrj1OjZgYS", // Example YouTube URL
   },
   {
     title: "Project Two",
-    description: "This is a brief description of Project Two.",
+    description: ["This is a brief description of Project Two."],
     link: ["https://google.com"],
     previewContent: "Preview content for Project Two.",
+    apk: "#",
     code: "#",
     technologies: ["Next.js", "TypeScript", "Node.js"],
-    youtubeUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Example YouTube URL
+    youtubeUrl: "https://www.youtube.com/embed/MC9MMBTqeQ4?si=93Ku7-QDPaTultAh", // Example YouTube URL
+  },
+  {
+    title: "Project One",
+    description: ["This is a brief description of Project One."],
+    link: ["#"],
+    previewContent: "Preview content for Project One.",
+    apk: "#",
+    code: "#",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    youtubeUrl: "https://www.youtube.com/embed/Tu5fcvC3Lts?si=2TrSuLY0cJmsWTmS", // Example YouTube URL
+  },
+  {
+    title: "Project One",
+    description: ["This is a brief description of Project One."],
+    link: ["#"],
+    previewContent: "Preview content for Project One.",
+    apk: "#",
+    code: "#",
+    technologies: ["React", "Tailwind CSS", "JavaScript"],
+    youtubeUrl: "https://www.youtube.com/embed/Dg1s19Q1I4U?si=3EvJZIXZxdNnwwTS", // Example YouTube URL
   },
   // Add more projects as needed
 ];
@@ -48,8 +96,35 @@ const Projects = () => {
               <h3 className="text-lg sm:text-xl font-semibold mb-2 text-left">
                 {project.title}
               </h3>
-              {/* youtube video preview */}
-              {project.youtubeUrl && (
+
+              {/* {conditionA
+                      ? <ComponentA />
+                      : conditionB
+                      ? <ComponentB />
+                      : <Fallback />}
+                      like
+                      if (conditionA) {
+                      return ComponentA;
+                    } else if (conditionB) {
+                      return ComponentB;
+                    } else {
+                      return Fallback;
+                    }
+                */}
+
+              {project.previewImage ? (
+                <a
+                  href={project.website || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={project.previewImage}
+                    alt={project.title}
+                    className="w-full aspect-video object-cover rounded-lg shadow mb-4"
+                  />
+                </a>
+              ) : project.youtubeUrl ? (
                 <div className="mb-4 w-full aspect-video">
                   <iframe
                     className="w-full h-full rounded"
@@ -60,10 +135,14 @@ const Projects = () => {
                     allowFullScreen
                   ></iframe>
                 </div>
-              )}
-              <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400">
-                {project.description}
-              </p>
+              ) : null}
+              {/**?} */}
+              <ul className="list-disc list-inside text-gray-600 dark:text-slate-400">
+                {project.description.map((point, index) => (
+                  <li key={index}>{point}</li>
+                ))}
+              </ul>
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies?.map((tech, techIndex) => (
                   <span
@@ -75,20 +154,37 @@ const Projects = () => {
                 ))}
               </div>
               <div className="flex flex-wrap gap-2 mt-auto">
-                {project.link?.map((link, linkIndex) => (
+                {/* // .filter out links that are just "#" */}
+                {project.link
+                  ?.filter((link) => link !== "#")
+                  .map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link}
+                      className="text-blue-500 hover:underline text-sm"
+                      target="_blank"
+                      rel="noopener noreferrer" //Always use rel="noopener noreferrer" with target="_blank" for security.
+                    >
+                      <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                        <Button>Play store</Button>
+                      </div>
+                    </a>
+                  ))}
+                {/* // if apk is "#" or not provided, do not render the .
+                link */}
+                {project.apk && project.apk !== "#" && (
                   <a
-                    key={linkIndex}
-                    href={link}
-                    className="text-blue-500 hover:underline text-sm"
+                    href={project.apk}
+                    className="text-green-500 hover:underline text-sm"
                     target="_blank"
-                    rel="noopener noreferrer" //Always use rel="noopener noreferrer" with target="_blank" for security.
+                    rel="noopener noreferrer"
                   >
                     <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                      <Button>Play store</Button>
+                      <Button>.apk</Button>
                     </div>
                   </a>
-                ))}
-                {project.code && (
+                )}
+                {project.code && project.code !== "#" && (
                   <a
                     href={project.code}
                     className="text-green-500 hover:underline text-sm"
@@ -96,7 +192,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                   >
                     <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                      <Button>.apk</Button>
+                      <Button>Code</Button>
                     </div>
                   </a>
                 )}

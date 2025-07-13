@@ -20,9 +20,9 @@ export default function Home() {
           "fixed inset-0 -z-10 h-full w-full",
           "[background-size:40px_40px]",
           // Light mode: very subtle gray lines
-          "[background-image:linear-gradient(to_right,#f1f1f1_1px,transparent_1px),linear-gradient(to_bottom,#f1f1f1_1px,transparent_1px)]",
+          "[background-image:linear-gradient(to_right,#f7f7f7_1px,transparent_1px),linear-gradient(to_bottom,#f1f1f1_1px,transparent_1px)]",
           // Dark mode: even darker subtle lines
-          "dark:[background-image:linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)]"
+          "dark:[background-image:linear-gradient(to_right,#111111_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)]"
         )}
       />
 

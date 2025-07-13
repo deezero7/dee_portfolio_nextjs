@@ -29,53 +29,81 @@ const projectsData: ProjectInterface[] = [
       "Routing and modular structure added for scalability",
     ],
 
-    link: ["https://google.com"],
+    link: ["#"],
     previewContent: "Preview content for Project One.",
-    apk: "https://fb.com",
-    code: "https://deezero7.github.io/webapp_for_Unity3dGame_nextjs-/login",
-    technologies: ["Node.js", "Express.js", "MongoDB"],
-    previewImage: "./images/unity3d-game-development.png", // Example image URL
+    apk: "https://drive.google.com/drive/folders/1qt0N7Kyi695a-LJZkMJkO-tFHaZNnfcV?usp=sharing",
+    code: "https://github.com/deezero7/Nodejs_server_for_Unity3dGame_Login_saveData",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "unity3d",
+    ],
+    previewImage: "./images/unity3d-game-development.png",
     website: "https://deezero7.github.io/webapp_for_Unity3dGame_nextjs-/login",
   },
   {
-    title: "Project One",
-    description: ["This is a brief description of Project One."],
-    link: ["https://google.com"],
+    title: "Ludo 3d plus",
+    description: [
+      "Ludo 3d game released on play store.",
+      "online-offline multiplayer",
+      "In game purchase",
+      "Levels upgrade system",
+      "Unlockable Dices and Pieces",
+      "Camera switching between 2d and 3d",
+      "Beautiful 3d environment",
+    ],
+    link: [
+      "https://play.google.com/store/apps/details?id=com.RPGames.Ludo3D&hl=en_US&gl=US",
+    ],
     previewContent: "Preview content for Project One.",
-    apk: "https://fb.com",
+    apk: "https://drive.google.com/drive/folders/1qt0N7Kyi695a-LJZkMJkO-tFHaZNnfcV?usp=sharing",
     code: "#",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
-    youtubeUrl: "https://www.youtube.com/embed/PZ8Kn4k_PGc?si=21TB7bLrj1OjZgYS", // Example YouTube URL
+    technologies: ["C#", "Unity3d", "mirror"],
+    youtubeUrl: "https://www.youtube.com/embed/PZ8Kn4k_PGc?si=21TB7bLrj1OjZgYS", // embed example of YouTube URL
   },
   {
-    title: "Project Two",
-    description: ["This is a brief description of Project Two."],
-    link: ["https://google.com"],
+    title: "ThirstyCrow",
+    description: [
+      "Isometric 2d game released on play store.",
+      "Unlock levels",
+      "difficulty levels increase with each level",
+    ],
+    link: [
+      "https://play.google.com/store/apps/details?id=com.rpdigital.ThirstyCrow1&hl=en_US&gl=US",
+    ],
     previewContent: "Preview content for Project Two.",
-    apk: "#",
+    apk: "https://drive.google.com/drive/folders/1qt0N7Kyi695a-LJZkMJkO-tFHaZNnfcV?usp=sharing",
     code: "#",
-    technologies: ["Next.js", "TypeScript", "Node.js"],
-    youtubeUrl: "https://www.youtube.com/embed/MC9MMBTqeQ4?si=93Ku7-QDPaTultAh", // Example YouTube URL
+    technologies: ["C#", "Unity3d"],
+    youtubeUrl: "https://www.youtube.com/embed/MC9MMBTqeQ4?si=93Ku7-QDPaTultAh", //
   },
   {
-    title: "Project One",
-    description: ["This is a brief description of Project One."],
+    title: "Game prototype 'Planet Protector'",
+    description: [
+      "Game prototype made in unreal engine 4 when unreal engine 4 was just released.",
+    ],
     link: ["#"],
     previewContent: "Preview content for Project One.",
     apk: "#",
     code: "#",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
-    youtubeUrl: "https://www.youtube.com/embed/Tu5fcvC3Lts?si=2TrSuLY0cJmsWTmS", // Example YouTube URL
+    technologies: ["C++", "Unreal Engine 4"],
+    youtubeUrl: "https://www.youtube.com/embed/Tu5fcvC3Lts?si=2TrSuLY0cJmsWTmS",
   },
   {
-    title: "Project One",
-    description: ["This is a brief description of Project One."],
+    title: "Interactive Learning prototype using Leap motion",
+    description: [
+      "A prototype project for interactive learning with hand gesture using leap motion in Unity3d engine.",
+    ],
     link: ["#"],
     previewContent: "Preview content for Project One.",
     apk: "#",
     code: "#",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
-    youtubeUrl: "https://www.youtube.com/embed/Dg1s19Q1I4U?si=3EvJZIXZxdNnwwTS", // Example YouTube URL
+    technologies: ["C#", "Unity3d", "Leap Motion sdk"],
+    youtubeUrl: "https://www.youtube.com/embed/Dg1s19Q1I4U?si=3EvJZIXZxdNnwwTS",
   },
   // Add more projects as needed
 ];
@@ -172,6 +200,18 @@ const Projects = () => {
                   ))}
                 {/* // if apk is "#" or not provided, do not render the .
                 link */}
+                {project.website && project.website !== "#" && (
+                  <a
+                    href={project.website}
+                    className="text-green-500 hover:underline text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                      <Button>Webapp</Button>
+                    </div>
+                  </a>
+                )}
                 {project.apk && project.apk !== "#" && (
                   <a
                     href={project.apk}

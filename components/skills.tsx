@@ -27,7 +27,8 @@ const skillsData: string[] = [
 
 const Skills: React.FC = () => {
   return (
-    <div className="flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-800 ">
+    
+    <div className="flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-900 ">
       <h2 className="text-2xl font-bold mb-6">Skills</h2>
       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2  ">
         {skillsData.map((skill, index) => (

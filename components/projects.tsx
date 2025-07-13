@@ -110,8 +110,8 @@ const projectsData: ProjectInterface[] = [
 
 const Projects = () => {
   return (
-    <div className="w-full flex justify-center px-0 sm:px-4 py-4 sm:py-8">
-      <div className="w-full max-w-4xl border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-md bg-white dark:bg-gray-800">
+    
+      <div className="w-full max-w-4xl flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-900">
         <h2 className=" text-2xl font-bold mb-6 sm:text-2xl mt-4 sm:mb-6 text-left pl-4 sm:pl-6">
           Projects
         </h2>
@@ -241,7 +241,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    
   );
 };
 export default Projects;

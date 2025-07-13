@@ -1,7 +1,7 @@
 export const Contact = () => {
   return (
     <section className="bg-blue-50 dark:bg-slate-800" id="contact">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-900 ">
         <div className="mb-4">
           <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
             <p className="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">

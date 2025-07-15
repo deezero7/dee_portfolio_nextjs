@@ -1,16 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
 
 interface ProjectInterface {
   title: string;
   description: string[];
-  link: string[];
+  playStoreLink: string[];
   previewContent?: string;
   apk?: string;
   code?: string;
   technologies?: string[];
   youtubeUrl?: string;
   previewImage?: string;
-  website?: string; // Optional field for website link
+  website?: string; // Optional field for website or web app link
+  otherLinks?: string[]; // Optional field for other links
 }
 
 const projectsData: ProjectInterface[] = [
@@ -29,7 +31,7 @@ const projectsData: ProjectInterface[] = [
       "Routing and modular structure added for scalability",
     ],
 
-    link: ["#"],
+    playStoreLink: ["#"],
     previewContent: "Preview content for Project One.",
     apk: "https://drive.google.com/drive/folders/1qt0N7Kyi695a-LJZkMJkO-tFHaZNnfcV?usp=sharing",
     code: "https://github.com/deezero7/Nodejs_server_for_Unity3dGame_Login_saveData",
@@ -56,7 +58,7 @@ const projectsData: ProjectInterface[] = [
       "Camera switching between 2d and 3d",
       "Beautiful 3d environment",
     ],
-    link: [
+    playStoreLink: [
       "https://play.google.com/store/apps/details?id=com.RPGames.Ludo3D&hl=en_US&gl=US",
     ],
     previewContent: "Preview content for Project One.",
@@ -72,7 +74,7 @@ const projectsData: ProjectInterface[] = [
       "Unlock levels",
       "difficulty levels increase with each level",
     ],
-    link: [
+    playStoreLink: [
       "https://play.google.com/store/apps/details?id=com.rpdigital.ThirstyCrow1&hl=en_US&gl=US",
     ],
     previewContent: "Preview content for Project Two.",
@@ -86,46 +88,50 @@ const projectsData: ProjectInterface[] = [
     description: [
       "Game prototype made in unreal engine 4 when unreal engine 4 was just released.",
     ],
-    link: ["#"],
+    playStoreLink: ["#"],
     previewContent: "Preview content for Project One.",
     apk: "#",
     code: "#",
     technologies: ["C++", "Unreal Engine 4"],
     youtubeUrl: "https://www.youtube.com/embed/Tu5fcvC3Lts?si=2TrSuLY0cJmsWTmS",
+    otherLinks: ["https://www.youtube.com/@deezero7103/videos"],
   },
   {
     title: "Interactive Learning prototype using Leap motion",
     description: [
       "A prototype project for interactive learning with hand gesture using leap motion in Unity3d engine.",
     ],
-    link: ["#"],
+    playStoreLink: ["#"],
     previewContent: "Preview content for Project One.",
     apk: "#",
     code: "#",
     technologies: ["C#", "Unity3d", "Leap Motion sdk"],
     youtubeUrl: "https://www.youtube.com/embed/Dg1s19Q1I4U?si=3EvJZIXZxdNnwwTS",
+    otherLinks: ["https://www.youtube.com/@rp_digital291/videos"],
   },
+
   // Add more projects as needed
 ];
 
 const Projects = () => {
   return (
-    
-      <div className="w-full max-w-4xl flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-900">
-        <h2 className=" text-2xl font-bold mb-6 sm:text-2xl mt-4 sm:mb-6 text-left pl-4 sm:pl-6">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 px-2 sm:px-6 justify-center">
-          {projectsData.map((project, index) => (
-            <div
-              key={project.title + index}
-              className="w-full max-w-sm bg-white dark:bg-gray-800 p-3 sm:p-6 rounded-lg shadow-md flex flex-col"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-left">
-                {project.title}
-              </h3>
+    <div className="w-full max-w-4xl flex flex-col  my-12 border-2 border-gray-300 dark:border-gray-700 p-6 rounded-lg shadow-md bg-white dark:bg-gray-900">
+      <h2 className=" text-2xl font-bold mb-6 sm:text-2xl mt-4 sm:mb-6 text-left pl-4 sm:pl-6 border-2 border-gray-300 dark:border-gray-700 rounded-lg p-2">
+        Projects
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 px-2 sm:px-6 justify-center">
+        {projectsData.map((project, index) => (
+          <div
+            key={project.title + index}
+            className="w-full max-w-sm bg-white dark:bg-gray-800 p-3 sm:p-6 rounded-lg shadow-md flex flex-col"
+          >
+            <h3 className="text-lg sm:text-xl font-bold mb-2 text-left text-gray-800 dark:text-white border-2 border-gray-300 dark:border-gray-700 rounded-lg p-2">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out   text-gray-800 dark:text-slate-300">
+                <span>{project.title}</span>
+              </AnimatedShinyText>
+            </h3>
 
-              {/* {conditionA
+            {/* {conditionA
                       ? <ComponentA />
                       : conditionB
                       ? <ComponentB />
@@ -140,108 +146,122 @@ const Projects = () => {
                     }
                 */}
 
-              {project.previewImage ? (
+            {project.previewImage ? (
+              <a
+                href={project.website || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={project.previewImage}
+                  alt={project.title}
+                  className="w-full aspect-video object-cover rounded-lg shadow mb-4"
+                />
+              </a>
+            ) : project.youtubeUrl ? (
+              <div className="mb-4 w-full aspect-video">
+                <iframe
+                  className="w-full h-full rounded"
+                  src={project.youtubeUrl}
+                  title={project.title + " video"}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ) : null}
+            {/**?} */}
+            <ul className="list-disc list-inside text-gray-600 dark:text-slate-400">
+              {project.description.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.technologies?.map((tech, techIndex) => (
+                <span
+                  key={tech + techIndex}
+                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full text-xs sm:text-sm"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {/* // .filter out links that are just "#" */}
+              {project.playStoreLink
+                ?.filter((playStoreLink) => playStoreLink !== "#")
+                .map((playStoreLink, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={playStoreLink}
+                    className="text-blue-500 hover:underline text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer" //Always use rel="noopener noreferrer" with target="_blank" for security.
+                  >
+                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                      <Button>Play store</Button>
+                    </div>
+                  </a>
+                ))}
+              {/* // if apk is "#" or not provided, do not render the .
+                playStoreLink */}
+              {project.website && project.website !== "#" && (
                 <a
-                  href={project.website || "#"}
+                  href={project.website}
+                  className="text-green-500 hover:underline text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src={project.previewImage}
-                    alt={project.title}
-                    className="w-full aspect-video object-cover rounded-lg shadow mb-4"
-                  />
+                  <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                    <Button>Webapp</Button>
+                  </div>
                 </a>
-              ) : project.youtubeUrl ? (
-                <div className="mb-4 w-full aspect-video">
-                  <iframe
-                    className="w-full h-full rounded"
-                    src={project.youtubeUrl}
-                    title={project.title + " video"}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              ) : null}
-              {/**?} */}
-              <ul className="list-disc list-inside text-gray-600 dark:text-slate-400">
-                {project.description.map((point, index) => (
-                  <li key={index}>{point}</li>
+              )}
+              {project.apk && project.apk !== "#" && (
+                <a
+                  href={project.apk}
+                  className="text-green-500 hover:underline text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                    <Button>.apk</Button>
+                  </div>
+                </a>
+              )}
+              {project.code && project.code !== "#" && (
+                <a
+                  href={project.code}
+                  className="text-green-500 hover:underline text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                    <Button>Code</Button>
+                  </div>
+                </a>
+              )}
+              {project.otherLinks
+                ?.filter((playStoreLink) => playStoreLink !== "#")
+                .map((playStoreLink, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={playStoreLink}
+                    className="text-blue-500 hover:underline text-sm"
+                    target="_blank"
+                    rel="noopener noreferrer" //Always use rel="noopener noreferrer" with target="_blank" for security.
+                  >
+                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
+                      <Button>other links</Button>
+                    </div>
+                  </a>
                 ))}
-              </ul>
-
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies?.map((tech, techIndex) => (
-                  <span
-                    key={tech + techIndex}
-                    className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-full text-xs sm:text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {/* // .filter out links that are just "#" */}
-                {project.link
-                  ?.filter((link) => link !== "#")
-                  .map((link, linkIndex) => (
-                    <a
-                      key={linkIndex}
-                      href={link}
-                      className="text-blue-500 hover:underline text-sm"
-                      target="_blank"
-                      rel="noopener noreferrer" //Always use rel="noopener noreferrer" with target="_blank" for security.
-                    >
-                      <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                        <Button>Play store</Button>
-                      </div>
-                    </a>
-                  ))}
-                {/* // if apk is "#" or not provided, do not render the .
-                link */}
-                {project.website && project.website !== "#" && (
-                  <a
-                    href={project.website}
-                    className="text-green-500 hover:underline text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                      <Button>Webapp</Button>
-                    </div>
-                  </a>
-                )}
-                {project.apk && project.apk !== "#" && (
-                  <a
-                    href={project.apk}
-                    className="text-green-500 hover:underline text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                      <Button>.apk</Button>
-                    </div>
-                  </a>
-                )}
-                {project.code && project.code !== "#" && (
-                  <a
-                    href={project.code}
-                    className="text-green-500 hover:underline text-sm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="flex flex-wrap items-center gap-2 md:flex-row">
-                      <Button>Code</Button>
-                    </div>
-                  </a>
-                )}
-              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    
+    </div>
   );
 };
 export default Projects;

@@ -101,7 +101,7 @@ const Icons = {
 
 const DATA = {
   navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/#home", icon: HomeIcon, label: "Home" },
     // { href: "#", icon: PencilIcon, label: "Blog" },
     { href: "/#projects", icon: Icons.project, label: "Projects" }, // Points to id="projects"
     { href: "/#Otherwork", icon: Icons.work, label: "Other-Work" },
@@ -146,7 +146,7 @@ export function DockCustom() {
     <TooltipProvider>
       <Dock
         direction="top"
-        className="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md bg-zinc-300 border-4 border-zinc-400 dark:bg-zinc-800 dark:border-zinc-700 rounded-t-lg shadow-lg flex items-center justify-between p-2"
+        className="min-w-fit flex-nowrap fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md bg-zinc-300 border-4 border-zinc-400 dark:bg-zinc-800 dark:border-zinc-700 rounded-t-lg shadow-lg flex items-center justify-between p-2"
       >
         {DATA.navbar.map((item) => (
           <DockIcon key={item.label} isMobile={isMobile}>
@@ -157,10 +157,10 @@ export function DockCustom() {
                   aria-label={item.label}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full"
+                    "size-10 md:size-12 rounded-full"
                   )}
                 >
-                  <item.icon className="size-4" />
+                  <item.icon className="size-4 md:size-5" />
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
@@ -179,10 +179,10 @@ export function DockCustom() {
                   aria-label={social.name}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12 rounded-full"
+                    "size-10 md:size-12 rounded-full"
                   )}
                 >
-                  <social.icon className="size-4" />
+                  <social.icon className="size-4 md:size-5" />
                 </Link>
               </TooltipTrigger>
               <TooltipContent>
@@ -191,7 +191,7 @@ export function DockCustom() {
             </Tooltip>
           </DockIcon>
         ))}
-        <Separator orientation="vertical" className="h-full py-2" />
+        <Separator orientation="vertical" className="h-full py-1" />
         <DockIcon isMobile={isMobile}>
           <Tooltip>
             <TooltipTrigger asChild>

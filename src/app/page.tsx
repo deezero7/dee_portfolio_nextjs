@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Intro from "../../components/intro";
 import Education from "../../components/education";
 import Skills from "../../components/skills";
@@ -44,7 +44,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="otherLinks">
+        <section id="Otherwork">
           <OtherLinks />
         </section>
 

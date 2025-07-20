@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from "lucide-react";
+import { CalendarIcon, HomeIcon, MailIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -104,7 +104,7 @@ const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     // { href: "#", icon: PencilIcon, label: "Blog" },
     { href: "/#projects", icon: Icons.project, label: "Projects" }, // Points to id="projects"
-    { href: "/#work", icon: Icons.work, label: "Work" },
+    { href: "/#Otherwork", icon: Icons.work, label: "Other-Work" },
   ],
   contact: {
     social: {

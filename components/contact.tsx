@@ -11,8 +11,8 @@ export const Contact = () => {
               Get in Touch
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-600 dark:text-slate-400">
-              I'm open to opportunities, collaborations, or just a quick hello.
-              Feel free to reach out!
+              I&#39;m open to opportunities, collaborations, or just a quick
+              hello. Feel free to reach out!
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import Work2d from "../src/app/otherLinks/work2d/page";
+"use client";
 import { Button } from "@/components/ui/button";
 
 const otherLinks = () => {

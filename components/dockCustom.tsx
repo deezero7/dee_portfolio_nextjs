@@ -144,65 +144,69 @@ export function DockCustom() {
 
   return (
     <TooltipProvider>
-      <Dock
-        direction="top"
-        className="min-w-fit flex-nowrap fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md bg-zinc-300 border-4 border-zinc-400 dark:bg-zinc-800 dark:border-zinc-700 rounded-t-lg shadow-lg flex items-center justify-between p-2"
-      >
-        {DATA.navbar.map((item) => (
-          <DockIcon key={item.label} isMobile={isMobile}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={item.href}
-                  aria-label={item.label}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-10 md:size-12 rounded-full"
-                  )}
-                >
-                  <item.icon className="size-4 md:size-5" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{item.label}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
-        <Separator orientation="vertical" className="h-full" />
-        {Object.entries(DATA.contact.social).map(([name, social]) => (
-          <DockIcon key={name} isMobile={isMobile}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={social.url}
-                  aria-label={social.name}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-10 md:size-12 rounded-full"
-                  )}
-                >
-                  <social.icon className="size-4 md:size-5" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
-        <Separator orientation="vertical" className="h-full py-1" />
-        <DockIcon isMobile={isMobile}>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ModeToggle />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Theme</p>
-            </TooltipContent>
-          </Tooltip>
-        </DockIcon>
-      </Dock>
+      <div className="fixed bottom-0 left-0 right-0 z-50 w-full overflow-x-auto px-2 sm:px-6">
+        <div className="mx-auto max-w-md">
+          <Dock
+            direction="top"
+            className="min-w-fit flex-nowrap fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-md bg-zinc-300 border-4 border-zinc-400 dark:bg-zinc-800 dark:border-zinc-700 rounded-t-lg shadow-lg flex items-center justify-between p-2"
+          >
+            {DATA.navbar.map((item) => (
+              <DockIcon key={item.label} isMobile={isMobile}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={item.href}
+                      aria-label={item.label}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-10 md:size-12 rounded-full"
+                      )}
+                    >
+                      <item.icon className="size-4 md:size-5" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{item.label}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation="vertical" className="h-full" />
+            {Object.entries(DATA.contact.social).map(([name, social]) => (
+              <DockIcon key={name} isMobile={isMobile}>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Link
+                      href={social.url}
+                      aria-label={social.name}
+                      className={cn(
+                        buttonVariants({ variant: "ghost", size: "icon" }),
+                        "size-10 md:size-12 rounded-full"
+                      )}
+                    >
+                      <social.icon className="size-4 md:size-5" />
+                    </Link>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </DockIcon>
+            ))}
+            <Separator orientation="vertical" className="h-full py-1" />
+            <DockIcon isMobile={isMobile}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <ModeToggle />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Theme</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          </Dock>
+        </div>
+      </div>
     </TooltipProvider>
   );
 }

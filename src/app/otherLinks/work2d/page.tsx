@@ -5,12 +5,10 @@ import { ImagesSlider } from "../../../components/ui/images-slider";
 import { Button } from "@/components/ui/button";
 
 const images = [
-  "/images/work2d/deependra-singh-env33.png",
   "/images/work2d/deependra-singh-env23c2.png",
-  "/images/work2d/deependra-singh-env19c2.png",
+  "/images/work2d/deependra-singh-env33.png",
+  "/images/work2d/deependra-singh-env32c2.png",
   "/images/work2d/deependra-singh-env19c26.png",
-  "/images/work2d/deependra-singh-env19c22.png",
-  "/images/work2d/deependra-singh-env19c24.png",
 ];
 
 export default function Work2dPage() {

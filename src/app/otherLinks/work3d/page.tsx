@@ -7,10 +7,9 @@ import { Button } from "@/components/ui/button";
 const images = [
   "/images/work3d/deependra_Game_PP1 (2).png",
   "/images/work3d/deependra_Game_PP1.png",
-  "/images/work3d/deependra_Game_PP4.png",
+
   "/images/work3d/deependra_Game_PP5.png",
   "/images/work3d/deependra_Game_PP6.png",
-  "/images/work3d/deependra_Game_PP7.png",
 ];
 
 export default function Work3dPage() {

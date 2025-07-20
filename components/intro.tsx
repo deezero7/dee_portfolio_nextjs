@@ -30,7 +30,7 @@ const Intro = () => {
               several games on the Play Store. I&#39;ve implemented features
               like custom login with backend , ads APIs, in-game purchases, and
               cloud saves, among others. Skilled in C++, C#, nodejs, javascript
-              and adept at Data Structures, Algorithms, and Problem Solving.
+              Data Structures, Algorithms, and Problem Solving.
             </p>
           </BoxReveal>
         </div>
@@ -41,8 +41,8 @@ const Intro = () => {
           <>
             <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
               I&#39;ve primarily worked with the Unity3D engine for my deployed
-              games. However, I&#39;ve also dabbled in Unreal Engine in the
-              past.
+              games. However, I&#39;ve also worked in Unreal Engine in the past
+              projects.
             </p>
 
             <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">

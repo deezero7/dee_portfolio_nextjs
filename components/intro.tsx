@@ -26,11 +26,11 @@ const Intro = () => {
           </h1>
           <BoxReveal>
             <p className="mx-3 sm:mx-6 text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
-              Hey there! I&#39;m a game developer with experience deploying several
-              games on the Play Store. I&#39;ve implemented features like custom
-              login with backend , ads APIs, in-game purchases, and cloud saves,
-              among others. Skilled in C++, C#, nodejs, javascript and adept at
-              Data Structures, Algorithms, and Problem Solving.
+              Hey there! I&#39;m a game developer with experience deploying
+              several games on the Play Store. I&#39;ve implemented features
+              like custom login with backend , ads APIs, in-game purchases, and
+              cloud saves, among others. Skilled in C++, C#, nodejs, javascript
+              and adept at Data Structures, Algorithms, and Problem Solving.
             </p>
           </BoxReveal>
         </div>
@@ -38,22 +38,27 @@ const Intro = () => {
       </div>
       <div className="mx-3 sm:mx-6 items-center sm:items-start">
         <BoxReveal>
-          <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
-            I&#39;ve primarily worked with the Unity3D engine for my deployed games.
-            However, I&#39;ve also dabbled in Unreal Engine in the past.
-          </p>
-          <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
-            I have a degree in computer science and game design and also possess
-            art and design skills, using tools like Blender, Maya, ZBrush,
-            Photoshop, Affinity Photo, and Affinity Designer for my projects.
-            I&#39;ve successfully deployed both 2D and 3D games on the Play Store.
-          </p>
-          <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
-            I thrive on tackling complex problems and delivering top-notch
-            solutions tailored to the needs of the project. Looking forward to
-            pushing boundaries and creating engaging experiences in the gaming
-            world! and other&#39;s.
-          </p>
+          <>
+            <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
+              I&#39;ve primarily worked with the Unity3D engine for my deployed
+              games. However, I&#39;ve also dabbled in Unreal Engine in the
+              past.
+            </p>
+
+            <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
+              I have a degree in computer science and game design and also
+              possess art and design skills, using tools like Blender, Maya,
+              ZBrush, Photoshop, Affinity Photo, and Affinity Designer for my
+              projects. I&#39;ve successfully deployed both 2D and 3D games on
+              the Play Store.
+            </p>
+            <p className="text-base sm:text-lg text-opacity-100  text-gray-600 dark:text-slate-400 text-justify">
+              I thrive on tackling complex problems and delivering top-notch
+              solutions tailored to the needs of the project. Looking forward to
+              pushing boundaries and creating engaging experiences in the gaming
+              world! and other&#39;s.
+            </p>
+          </>
         </BoxReveal>
       </div>
     </div>

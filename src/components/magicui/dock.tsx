@@ -26,9 +26,9 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
   children: React.ReactNode;
 }
 
-const DEFAULT_SIZE = 40;
-const DEFAULT_MAGNIFICATION = 60;
-const DEFAULT_DISTANCE = 140;
+const DEFAULT_SIZE = 28; // default size for icons
+const DEFAULT_MAGNIFICATION = 40;
+const DEFAULT_DISTANCE = 108;
 
 const dockVariants = cva(
   "supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 mx-auto mt-8 flex h-[58px] max-w-full items-center justify-center gap-2 rounded-2xl border p-2 px-4 backdrop-blur-md "

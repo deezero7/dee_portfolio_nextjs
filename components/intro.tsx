@@ -29,7 +29,7 @@ const Intro = () => {
               Hey there! I&#39;m a game developer with experience deploying
               several games on the Play Store. I&#39;ve implemented features
               like custom login with backend , ads APIs, in-game purchases, and
-              cloud saves, among others. Skilled in C++, C#, nodejs, javascript
+              cloud saves, among others. Skilled in C++, C#, nodejs, javascript,
               Data Structures, Algorithms, and Problem Solving.
             </p>
           </BoxReveal>

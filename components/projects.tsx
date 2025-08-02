@@ -41,6 +41,7 @@ const projectsData: ProjectInterface[] = [
     technologies: [
       "C#",
       "JavaScript",
+      "TypeScript",
       "Node.js",
       "Express.js",
       "MongoDB",

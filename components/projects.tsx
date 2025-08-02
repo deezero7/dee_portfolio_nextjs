@@ -39,6 +39,8 @@ const projectsData: ProjectInterface[] = [
     apk: "https://drive.google.com/drive/folders/1qt0N7Kyi695a-LJZkMJkO-tFHaZNnfcV?usp=sharing",
     code: "https://github.com/deezero7/Nodejs_server_for_Unity3dGame_Login_saveData",
     technologies: [
+      "C#",
+      "JavaScript",
       "Node.js",
       "Express.js",
       "MongoDB",

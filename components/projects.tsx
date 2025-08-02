@@ -17,18 +17,21 @@ interface ProjectInterface {
 
 const projectsData: ProjectInterface[] = [
   {
-    title: "Custom login and save game data",
+    title: "Custom Login and Cloud Game Data System",
     description: [
       "Custom login and registration system",
-      "Save and fetch game data on cloud using Node.js and MongoDB",
-      "Player data includes: profile picture, gems, gold, XP, level, etc.",
-      "argon2 used for secure password hashing",
+      "Save and fetch game data on the cloud using Node.js and MongoDB",
+      "Player data includes profile picture, gems, gold, XP, level, etc.",
+      "Secure password hashing using Argon2",
       "IP blocking after multiple failed login attempts",
       "Email verification using JWT tokens",
-      "JWT token-based authentication with auto-refresh on successful login",
-      "Regex used for validating email and password format",
-      "Mongoose for schema definition and database connection",
-      "Routing and modular structure added for scalability",
+      "JWT-based authentication with auto-refresh on successful login",
+      "Regex used for validating email and password formats",
+      "Mongoose used for schema definition and database connection",
+      "Modular routing structure for scalability",
+      "Forgot password reset functionality",
+      "Profile picture upload using multipart form (Multer)",
+      "Frontend built with Next.js (web) and Unity3D (Android)",
     ],
 
     playStoreLink: ["#"],

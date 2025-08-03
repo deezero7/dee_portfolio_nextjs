@@ -72,6 +72,7 @@ const projectsData: ProjectInterface[] = [
     code: "#",
     technologies: ["C#", "Unity3d", "mirror"],
     youtubeUrl: "https://www.youtube.com/embed/PZ8Kn4k_PGc?si=21TB7bLrj1OjZgYS", // embed example of YouTube URL
+    otherLinks: ["https://trello.com/b/ylLAA09v/ludo3d"],
   },
   {
     title: "ThirstyCrow",
